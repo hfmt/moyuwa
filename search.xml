@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>C</title>
+      <link href="/2021/07/20/C/"/>
+      <url>/2021/07/20/C/</url>
+      
+        <content type="html"><![CDATA[<h2 id="排序方式"><a href="#排序方式" class="headerlink" title="排序方式"></a>排序方式</h2><h3 id="冒泡"><a href="#冒泡" class="headerlink" title="冒泡"></a>冒泡</h3><p>从第一个数开始,每次和后面剩余的数进行比较,若升序,则如果后边的数比当前数字小,进行交换,和后面的所有的数比较、交换后,就会将当前的最小值放在当前的位置</p><pre><code>for(i=0;i&lt;n-1;i++)&#123;                  for(j=0;j&lt;n-i-1;j++)    &#123;        if(a[j]&gt;a[j+1])        &#123;            t=a[j];            a[j]=a[j+1];            a[j+1]=t;        &#125;    &#125;</code></pre><h3 id="冒泡算法的优化"><a href="#冒泡算法的优化" class="headerlink" title="冒泡算法的优化"></a>冒泡算法的优化</h3><pre><code>for(i=0;i&lt;n-1;++i)&#123;                    int f=1;//这里设置一个开关变量    for(j=0;j&lt;n-i-1;++j)    &#123;        if(a[j]&gt;a[j+1])        &#123;            t=a[j];            a[j]=a[j+1];            a[j+1]=t;            f=0;        &#125;    &#125;    if(1==f)//f为1说明没进行过冒泡,说明序列有序        break;//若序列有序,则跳出排序即可&#125;</code></pre><h3 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h3><p>从第一个数开始,每次和后面剩余的数进行比较,若升序,则如果后边的数比当前数字小,进行交换,和后面的所有的数比较、交换后,就会将当前的最小值放在当前的位置</p><pre><code>for(i=0;i&lt;n-1;i++)&#123;    for(j=i+1;j&lt;n;j++)    &#123;        if(a[i]&gt;a[j])        &#123;            t=a[i];            a[i]=a[j];            a[j]=t;        &#125;    &#125;&#125;</code></pre><h3 id="选择算法的优化"><a href="#选择算法的优化" class="headerlink" title="选择算法的优化"></a>选择算法的优化</h3><pre><code>for(i=0;i&lt;n-1;i++)&#123;    int k=i;//设置一个变量存储下标    for(j=i+1;j&lt;n;j++)    &#123;        if(a[k]&gt;a[j])            k=j;    &#125;//执行过后,k会存储当前最小值的下标    //每个循环只需交换一次            t=a[k];    a[k]=a[i];    a[i]=t;&#125;</code></pre><h3 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h3><p>把一个数插入到一个有序排列中，并保持该序列的有序性</p><pre><code>//例如将输入数t插入到长度为n的升序排列数组中for(i=n-1;i&gt;-1;i--)&#123;    if(t&lt;a[i])    &#123;        a[i+1]=a[i];    &#125;    else    &#123;        break;    &#125;&#125;//跳出循环，找到插入位置a[i+1]=t;//将该数字插入</code></pre><p>下面把该方法用于数组的排序中</p><pre><code>for(i=1;i&lt;n;++i)&#123;    t=a[i];    for(j=i-1;j&gt;-1 &amp;&amp; a[j]&gt;t;j--)//把if语句的内容放到for的条件句中    &#123;        a[j+1]=a[j];    &#125;    //跳出循环，找到插入位置    a[j+1]=t;&#125;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> C </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2021/07/18/hello-world/"/>
       <url>/2021/07/18/hello-world/</url>
